@@ -1,0 +1,89 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 796c431e3d5bb32759f7ebb5348586232341a4eff2ea77331500be015437b5fb
+
+name:           mmmtl
+version:        0.0.0
+author:         Joe Kachmar
+copyright:      2018 Joe Kachmar
+license:        Apache-2.0
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      App
+      Effects.Http
+      Effects.Logger
+      Effects.Scribe
+      Run
+  other-modules:
+      Paths_mmmtl
+  hs-source-dirs:
+      library
+  default-extensions: AutoDeriveTypeable BangPatterns BinaryLiterals ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MonadFailDesugaring MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications TypeFamilies TypeSynonymInstances ViewPatterns
+  ghc-options: -fwarn-tabs -fhide-source-paths -fprint-potential-instances -optP-Wno-nonportable-include-path -Wall -Wcpp-undef -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-do-bind -Wno-deprecations -Wno-monomorphism-restriction -Wno-unticked-promoted-constructors -Wpartial-fields
+  build-depends:
+      base >=4.7 && <5
+    , concurrency >=1.6.1.0 && <1.7
+    , dejafu >=1.11.0.3 && <1.12
+    , generic-lens >=1.0.0.2 && <1.1
+    , katip >=0.6.3.0 && <0.7
+    , lens >=4.16.1 && <4.17
+    , protolude >=0.2.2 && <0.3
+    , safe-exceptions >=0.1.7.0 && <0.2
+  default-language: Haskell2010
+
+executable demo
+  main-is: Main.hs
+  other-modules:
+      Paths_mmmtl
+  hs-source-dirs:
+      executables
+  default-extensions: AutoDeriveTypeable BangPatterns BinaryLiterals ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MonadFailDesugaring MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications TypeFamilies TypeSynonymInstances ViewPatterns
+  ghc-options: -fwarn-tabs -fhide-source-paths -fprint-potential-instances -optP-Wno-nonportable-include-path -Wall -Wcpp-undef -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-do-bind -Wno-deprecations -Wno-monomorphism-restriction -Wno-unticked-promoted-constructors -Wpartial-fields -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , concurrency >=1.6.1.0 && <1.7
+    , dejafu >=1.11.0.3 && <1.12
+    , generic-lens >=1.0.0.2 && <1.1
+    , katip >=0.6.3.0 && <0.7
+    , lens >=4.16.1 && <4.17
+    , mmmtl
+    , protolude >=0.2.2 && <0.3
+    , safe-exceptions >=0.1.7.0 && <0.2
+  default-language: Haskell2010
+
+test-suite tasty
+  type: exitcode-stdio-1.0
+  main-is: Driver.hs
+  other-modules:
+      Test.LoggingTest
+      Test.Mocks.Logger
+      Test.Mocks.Scribe
+      Test.TestApp
+      Paths_mmmtl
+  hs-source-dirs:
+      test
+  default-extensions: AutoDeriveTypeable BangPatterns BinaryLiterals ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable DoAndIfThenElse EmptyDataDecls ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs KindSignatures LambdaCase MonadFailDesugaring MultiParamTypeClasses MultiWayIf NamedFieldPuns NoImplicitPrelude OverloadedStrings PartialTypeSignatures PatternGuards PolyKinds RankNTypes ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications TypeFamilies TypeSynonymInstances ViewPatterns
+  ghc-options: -fwarn-tabs -fhide-source-paths -fprint-potential-instances -optP-Wno-nonportable-include-path -Wall -Wcpp-undef -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-do-bind -Wno-deprecations -Wno-monomorphism-restriction -Wno-unticked-promoted-constructors -Wpartial-fields
+  build-depends:
+      base >=4.7 && <5
+    , concurrency >=1.6.1.0 && <1.7
+    , dejafu >=1.11.0.3 && <1.12
+    , generic-lens >=1.0.0.2 && <1.1
+    , katip >=0.6.3.0 && <0.7
+    , lens >=4.16.1 && <4.17
+    , mmmtl
+    , protolude >=0.2.2 && <0.3
+    , safe-exceptions >=0.1.7.0 && <0.2
+    , tasty >=1.1.0.4 && <1.2
+    , tasty-discover >=4.2.1 && <4.3
+    , tasty-hspec >=1.1.5 && <1.2
+  default-language: Haskell2010
