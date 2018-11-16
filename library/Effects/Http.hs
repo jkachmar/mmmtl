@@ -13,7 +13,7 @@ class Monad m => Http m where
 
 --------------------------------------------------------------------------------
 -- | Concrete implementation of `Http`'s `call` method, using a connection
--- | `Manager` supplied by the configuration record `r` in `m`.
+-- | `Manager` supplied by some operational context within `m`.
 ioCallHttpImpl
   :: ( MonadReader context m
      , HasHttpConfig context

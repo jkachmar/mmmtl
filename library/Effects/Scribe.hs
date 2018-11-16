@@ -34,8 +34,7 @@ class Monad m => Scribe m where
 -- | Concrete implementation of `Scribe`'s `info` method for a `Katip`-powered
 -- | logger.
 -- |
--- | Logs in `Katip`'s `Info` context, automatically gathering module and source
--- | code location via the `logTM` Template Haskell splice.
+-- | Logs in `Katip`'s `Info` context.
 katipScribeInfoImpl :: (MonadIO m, KatipContext m) => Text -> m ()
 katipScribeInfoImpl = logFM InfoS . ls
 

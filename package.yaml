@@ -2,7 +2,7 @@ name:       "mmmtl"
 version:    0.0.0
 author:     "Joe Kachmar"
 copyright:  "2018 Joe Kachmar"
-LICENSE:    Apache-2.0
+license:    Apache-2.0
 
 extra-source-files: README.md
 
